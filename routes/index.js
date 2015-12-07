@@ -35,5 +35,23 @@ router.put('/flight/:number/arrived', function(req, res) {
 	}
 });
 
+router.get('/list', function (req, res) {
+	res.render('list', {
+		title: 'All Flights', 
+		flights: flights});
+});
+
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+
+
+// exports.list = function (req, res) {
+// 	res.render('list', {
+// 		title: 'All Flights', 
+// 		flights: flights});
+// };
+
 
 module.exports = router;
